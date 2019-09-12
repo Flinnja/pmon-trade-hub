@@ -1,2 +1,13 @@
-<h1>Pokemon#show</h1>
-<p>Find me in app/views/pokemon/show.html.erb</p>
+<h1>@pokemon.name</h1>
+
+<dl>
+	<dt>Pokémon Name</dt>
+	<dd><%= @pokemon.name %></dd>
+	<dt>National Dex #</dt>
+	<dd><%= @pokemon.national_dex_no %></dd>
+	<dt>Shiny Possible</dt>
+	<dd><%= @pokemon.can_be_shiny? %></dd>
+</dl>
+
+<%= link_to "Edit", edit_pokemon_path(@pokemon), class: "btn btn-primary" %>
+<%= link_to "Delete", pokemon_path(@pokemon), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure you want to delete #{@pokemon.name}? This action cannot be undone."} %>
