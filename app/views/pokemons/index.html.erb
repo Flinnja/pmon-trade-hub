@@ -1,0 +1,29 @@
+<h1>Available Pokémon</h1>
+<%= link_to "Add a Pokémon", new_pokemon_path, class: "btn btn-default" %>
+<% if @pokemons.length > 0 %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Dex #</th>
+				<th>Name</th>
+				<th>Type 1</th>
+				<th>Type 2</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @pokemons.each do |pokemon| %>
+				<tr>
+					<td><%= link_to "#{pokemon.national_dex_no}", pokemon_path(pokemon) %></td>
+					<td><%= link_to "#{pokemon.name}", pokemon_path(pokemon) %></td>
+					<td>#type1</td>
+					<td>#type2</td>
+					<td><%= link_to "Edit", edit_pokemon_path(pokemon) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<p>There are no Pokémon in the database yet!</p>
+<% end %>
