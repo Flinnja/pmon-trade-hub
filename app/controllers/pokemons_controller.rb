@@ -48,6 +48,6 @@ class PokemonsController < ApplicationController
 
   private
   def pokemon_params
-  	params.require(:pokemon).permit(:name, :national_dex_no, :can_be_shiny?)
+  	params.require(:pokemon).permit(:name, :national_dex_no, :can_be_shiny)
   end
 end

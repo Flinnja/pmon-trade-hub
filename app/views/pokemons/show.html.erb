@@ -5,8 +5,14 @@
 	<dd><%= @pokemon.name %></dd>
 	<dt>National Dex #</dt>
 	<dd><%= @pokemon.national_dex_no %></dd>
-	<dt>Shiny Possible</dt>
-	<dd><%= @pokemon.can_be_shiny? %></dd>
+	<dt>Shiny Form</dt>
+	<dd>
+		<% if @pokemon.can_be_shiny? %>
+			Shiny available
+		<% else %>
+			Shiny not officially available
+		<% end %>
+	</dd>
 </dl>
 
 <%= link_to "Edit", edit_pokemon_path(@pokemon), class: "btn btn-primary" %>
