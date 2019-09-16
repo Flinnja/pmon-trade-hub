@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :type_efficacy do
+    effectiveness { "MyString" }
+  end
+
+  factory :type do
+    name { "Normal" }
+  end
+
 
 	factory :pokemon_species do
 		name { "Bulbasaur" }

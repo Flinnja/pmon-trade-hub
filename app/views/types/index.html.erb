@@ -1,0 +1,23 @@
+<h1>Available Types</h1>
+<%= link_to "Add a Type", new_type_path, class: "btn btn-default" %>
+<% if @types.length > 0 %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @types.each do |type| %>
+				<tr>
+					<td><%= link_to "#{type.name}", type_path(type) %></td>
+					<td><%= link_to "Edit", edit_type_path(type) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<p>There are no Types in the database yet!</p>
+<% end %>

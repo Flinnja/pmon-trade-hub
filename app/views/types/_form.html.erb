@@ -1,0 +1,14 @@
+<%= simple_form_for @type do |f| %>
+	<% if @type.errors.any? %>
+		<div class="alert alert-danger" role="alert">
+			<span>Error:</span>
+			<% @type.errors.full_messages.each do |message| %>
+				<%= message %><br />
+			<% end %>
+		</div>
+	<% end %>
+
+	<%= f.input :name %>
+
+	<%= f.submit %>
+<% end %>
