@@ -1,4 +1,4 @@
-class Pokemon < ApplicationRecord
+class PokemonSpecies < ApplicationRecord
 	validates :name, presence: true, uniqueness: {case_sensitive: false}
 
 	validates :national_dex_no, presence: true, uniqueness: true
