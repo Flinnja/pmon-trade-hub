@@ -1,0 +1,29 @@
+<h1>Available Pokémon Species</h1>
+<%= link_to "Add a Pokémon Species", new_pokemon_species_path, class: "btn btn-default" %>
+<% if @pokemon_species.length > 0 %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Dex #</th>
+				<th>Name</th>
+				<th>Type 1</th>
+				<th>Type 2</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @pokemon_species.each do |pokemon| %>
+				<tr>
+					<td><%= link_to "#{pokemon.national_dex_no}", pokemon_species_path(pokemon) %></td>
+					<td><%= link_to "#{pokemon.name}", pokemon_species_path(pokemon) %></td>
+					<td>#type1</td>
+					<td>#type2</td>
+					<td><%= link_to "Edit", edit_pokemon_species_path(pokemon) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<p>There are no Pokémon Species in the database yet!</p>
+<% end %>

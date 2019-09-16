@@ -1,0 +1,16 @@
+<%= simple_form_for @pokemon do |f| %>
+	<% if @pokemon.errors.any? %>
+		<div class="alert alert-danger" role="alert">
+			<span>Error:</span>
+			<% @pokemon.errors.full_messages.each do |message| %>
+				<%= message %><br />
+			<% end %>
+		</div>
+	<% end %>
+
+	<%= f.input :name %>
+	<%= f.input :national_dex_no, label: "Pokédex #" %>
+	<%= f.input :can_be_shiny %>
+
+	<%= f.submit %>
+<% end %>
